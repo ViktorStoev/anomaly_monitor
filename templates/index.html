@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Anomaly Monitor</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .anomaly, .log { padding: 10px; border: 1px solid #ccc; margin-bottom: 10px; }
+        .timestamp { color: #666; font-size: 0.9em; }
+        h2 { margin-top: 30px; }
+    </style>
+</head>
+<body>
+    <h1>Anomaly Monitor</h1>
+    <form action="/log" method="post">
+        <input type="text" name="description" placeholder="Опишите аномалию..." required>
+        <button type="submit">Зарегистрировать</button>
+    </form>
+
+    <h2>Зарегистрированные аномалии:</h2>
+    <div id="anomalies">
+        {% for anomaly in anomalies %}
+        <div class="anomaly">
+            <div class="timestamp">{{ anomaly.timestamp }}</div>
+            <div class="description">{{ anomaly.description }}</div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <h2>Логи:</h2>
+    <div id="logs">
+        {% for log in logs %}
+        <div class="log">{{ log }}</div>
+        {% endfor %}
+    </div>
+</body>
+</html>
