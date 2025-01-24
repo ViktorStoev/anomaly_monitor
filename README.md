@@ -22,7 +22,7 @@
 
 2. В поле **"Run command"** введите следующую команду:
 ```bash
-python -m ensurepip --upgrade && pip install -r requirements.txt && python anomaly_monitor.py
+python anomaly_monitor.py
 ```
 ![image](https://github.com/user-attachments/assets/a17e8ba8-d320-4466-86d8-c6f81b4dfe84)
 
